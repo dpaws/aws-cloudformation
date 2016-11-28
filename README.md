@@ -25,19 +25,19 @@ You should also specify a specific release that is compatible with your playbook
 
 ### Install using Ansible Galaxy
 
-To set this role up as an Ansible Galaxy requirement, first create a `requirements.yml` file at the root of your playbook and add an entry for this role.  See the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html#installing-multiple-roles-from-a-file) for more details.
+To set this role up as an Ansible Galaxy requirement, first create a `requirements.yml` file in a `roles` subfolder of your playbook and add an entry for this role.  See the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html#installing-multiple-roles-from-a-file) for more details.
 
 ```
 # Example requirements.yml file
 - src: https://github.com/dpaws/aws-cloudformation.git
-  version: 1.0.0
+  version: 0.1.0
   name: aws-cloudformation
 ```
 
 Once you have created `requirements.yml`, you can install the role using the `ansible-galaxy` command line tool.
 
 ```
-$ ansible-galaxy install -r requirements.yml -p ./roles/ --force
+$ ansible-galaxy install -r roles/requirements.yml -p ./roles/ --force
 ```
 
 To update the role version, simply update the `requirements.yml` file and re-install the role as demonstrated above.
@@ -50,9 +50,9 @@ You can also install this role by adding this repository as a Git submodule and 
 $ git submodule add https://github.com/dpaws/aws-cloudformation.git roles/aws-cloudformation
 Submodule path 'roles/aws-cloudformation': checked out '05f584e53b0084f1a2a6a24de6380233768a1cf0'
 $ cd roles/aws-cloudformation
-roles/aws-cloudformation$ git checkout 1.0.0
+roles/aws-cloudformation$ git checkout 0.1.0
 roles/aws-cloudformation$ cd ../..
-$ git commit -a -m "Added aws-cloudformation 1.0.0 role"
+$ git commit -a -m "Added aws-cloudformation 0.1.0 role"
 ```
 
 If you add this role as a submodule, you can update to later versions of this role by updating your submodules:
@@ -209,6 +209,6 @@ The following is an example of a playbook configured to use this role.  Note the
 
 ## Release Notes
 
-### Version 1.0.0
+### Version 0.1.0
 
 - First Release
